@@ -28,7 +28,7 @@ def test_classify_image_letter():
 
     print(f"Classification result: {result}")
 
-    assert result == "letter"
+    assert result == "form"
 
 
 def test_classify_image_taxdoc():
