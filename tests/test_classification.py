@@ -15,7 +15,7 @@ spec.loader.exec_module(classification_module)
 # Extract your function
 classify_image = classification_module.classify_image
 
-
+#comment for testing purposes
 def test_classify_image_letter():
 
     load_dotenv()
