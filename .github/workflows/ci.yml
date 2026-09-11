@@ -25,6 +25,13 @@ jobs:
         - name: Create .env file
           run: echo 'TOKEN="${{ secrets.HF_TOKEN }}"' > .env
 
+        - name: Debug Environment File Setup
+          run: |
+            echo "Checking if .env exists:"
+            ls -la .env
+            echo "Checking keys in .env (values hidden):"
+            sed 's/=.*/=***hidden***/' .env
+
         - name: Install Python + dependencies exactly as locked
           
           run: uv sync --frozen
