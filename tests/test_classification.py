@@ -16,6 +16,7 @@ spec.loader.exec_module(classification_module)
 classify_image = classification_module.classify_image
 
 
+# comment for testing purposes x2
 def test_classify_image_letter():
 
     load_dotenv()
@@ -28,10 +29,10 @@ def test_classify_image_letter():
 
     print(f"Classification result: {result}")
 
-    assert result == "form"
+    assert result == "letter"
 
 
-def test_classify_image_taxdoc():
+def test_classify_image_form():
 
     load_dotenv()
 
