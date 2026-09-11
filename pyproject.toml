@@ -1,0 +1,29 @@
+[project]
+name = "de-bar"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "huggingface-hub>=1.31.0",
+    "pillow>=12.3.0",
+    "python-dotenv>=1.2.3",
+    "torch>=2.14.0",
+    "torchvision>=0.29.0",
+    "transformers>=5.17.0",
+]
+
+
+
+[dependency-groups]
+dev = [
+    "pytest>=8.0.0",
+    "ruff>=0.9.0",   # linter + formatter (config in [tool.ruff] below)
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = ["-q", "-ra"]
+
+[tool.ruff.lint.per-file-ignores]
+"**/De-Bar/*" = ["N999"]  # If it's a directory

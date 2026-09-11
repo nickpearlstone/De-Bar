@@ -1,0 +1,33 @@
+name: Python CI
+
+on:
+  push:
+
+jobs:
+    ci:
+      runs-on: ubuntu-latest
+    
+      timeout-minutes: 20
+
+      steps:
+        - name: Check out the repo
+          uses: actions/checkout@v4
+
+        - name: Install uv (with dependency caching)
+          uses: astral-sh/setup-uv@v6
+          with:
+            enable-cache: true
+
+        - name: Install Python + dependencies exactly as locked
+          
+          run: uv sync --frozen
+
+        - name: Run tests
+          
+          run: uv run python -m pytest
+          
+        - name: Ruff linting
+          run: uv run ruff check --output-format=github . 
+
+        - name: Ruff format check
+          run: uv run ruff format --check 
