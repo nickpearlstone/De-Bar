@@ -27,7 +27,7 @@ jobs:
 
         - name: Run tests
           
-          run: uv run python -m pytest
+          run: uv run pytest
           
         - name: Ruff linting
           run: uv run ruff check --output-format=github . 
