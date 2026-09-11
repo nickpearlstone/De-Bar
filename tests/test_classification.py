@@ -28,10 +28,10 @@ def test_classify_image_letter():
 
     print(f"Classification result: {result}")
 
-    assert result == "random thing"
+    assert result == "letter"
 
 
-def test_classify_image_taxdoc():
+def test_classify_image_form():
 
     load_dotenv()
 
